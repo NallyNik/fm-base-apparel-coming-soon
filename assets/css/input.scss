@@ -1,0 +1,175 @@
+@use 'global';
+
+body{
+    min-height: 100vh;
+
+    background: global.$gradient-1;
+}
+
+/* header */
+header {
+    padding: 2rem;
+}
+.logo {
+    width: 7rem;
+}
+
+/* picture */
+picture img {
+    width: 100%;
+    height: 100%;
+}
+
+/* main */
+main {
+    padding: 4rem 2rem;
+    @extend %flex-column;
+
+    text-align: center;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    color: global.$dark-grayish-red;
+}
+span {
+    color: global.$desaturated-red;
+    font-weight: 300;
+}
+p {
+    color: global.$desaturated-red;
+    line-height: 1.5;
+}
+.email-submit {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    border: 1px solid global.$desaturated-red;
+    border-radius: 2rem;
+
+    &::after {
+        content: '';
+        width: 5rem;
+        height: 2rem;
+        position: absolute;
+        top: 25%;
+        right: 10%;
+        opacity: 0;
+        
+        background: url('../images/icon-error.svg') no-repeat;
+    }
+
+    &:invalid::after {
+        opacity: 1;
+    }
+    &:invalid + .error {
+        opacity: 1;
+    }
+}
+input {
+    width: 100%;
+    padding-left: 1rem;
+
+    background-color: transparent;
+    border-radius: 2rem;
+
+    &:invalid {
+        border: 2px solid global.$soft-red;
+    }
+}
+::placeholder {
+    color: rgba(global.$desaturated-red, $alpha: .5);
+}
+button {
+    width: 4rem;
+    height: 100%;
+    padding: 1rem;
+    margin-left: -3rem;
+
+    border-radius: 2rem;
+    background: global.$gradient-2;
+    box-shadow: 0 20px 20px rgba(global.$desaturated-red, .4);
+
+    &:hover {
+        background: global.$desaturated-red;
+        cursor: pointer;
+    }
+}
+.error {
+    margin-left: 2rem;
+    color: global.$soft-red;
+    font-size: small;
+    opacity: 0;
+}
+
+
+/* footer */
+footer {
+    padding-bottom: .5rem;
+
+    text-align: center;
+    white-space: pre-line;
+}
+a {
+    color: global.$desaturated-red;
+
+    &:hover {
+        color: global.$soft-red;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template: "logo image" 15vh
+                        "main image" 80vh
+                        "footer image" 5vh /
+                        1fr auto;
+        
+        background: url('../images/bg-pattern-desktop.svg') no-repeat;
+    }
+    header {
+        grid-area: logo;
+        padding: 4rem 8rem;
+    }
+    .logo {
+        width: 10rem;
+    }
+    picture {
+        grid-area: image;
+
+        img {
+            object-fit: cover;
+        }
+    }
+    
+    main {
+        grid-area: main;
+        padding: 5rem 8rem 8rem;
+        text-align: left;
+    }
+    h1 {
+        font-size: 4.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    .email-submit {
+        margin-top: 2rem;
+    }
+    ::placeholder {
+        padding-left: 1rem;
+        font-size: 1.1rem;
+    }
+    button {
+        width: 6rem;
+    }
+
+    footer {
+        grid-area: footer;
+        white-space: normal;
+    }
+}
