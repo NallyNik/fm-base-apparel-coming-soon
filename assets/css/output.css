@@ -112,6 +112,7 @@ button:hover {
 
 .error {
   margin-left: 2rem;
+  text-align: left;
   color: hsl(0, 93%, 68%);
   font-size: small;
   opacity: 0;

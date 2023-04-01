@@ -68,6 +68,7 @@ p {
     &:invalid + .error {
         opacity: 1;
     }
+    
 }
 input {
     width: 100%;
@@ -100,6 +101,7 @@ button {
 }
 .error {
     margin-left: 2rem;
+    text-align: left;
     color: global.$soft-red;
     font-size: small;
     opacity: 0;
