@@ -131,7 +131,7 @@ a {
                         "footer image" 5vh /
                         1fr auto;
         
-        background: url('../images/bg-pattern-desktop.svg') no-repeat;
+        background: url('../images/bg-pattern-desktop.svg') no-repeat, global.$gradient-1;
     }
     header {
         grid-area: logo;

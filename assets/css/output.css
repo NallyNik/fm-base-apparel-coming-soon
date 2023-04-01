@@ -136,7 +136,7 @@ a:hover {
   body {
     display: grid;
     grid-template: "logo image" 15vh "main image" 80vh "footer image" 5vh/1fr auto;
-    background: url("../images/bg-pattern-desktop.svg") no-repeat;
+    background: url("../images/bg-pattern-desktop.svg") no-repeat, linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   }
   header {
     grid-area: logo;
